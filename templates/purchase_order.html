@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+<div
+  class="container"
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 10px;
+  "
+>
+<form class="row g-3" method="POST" action="{% url 'panel:purchase_order' %}">
+    {% csrf_token %}
+    <div class="col-md-6">
+      <label for="product_name" class="form-label" style="color: rgb(111, 100, 100);">Product Name</label>
+      <input type="text" class="form-control" id="product_name" name="product_name"  required/>
+    </div>
+    <div class="col-md-6">
+      <label for="quantity" class="form-label" style="color: rgb(111, 100, 100);">Quantity</label>
+      <input type="number" class="form-control" id="quantity" name="quantity"  required/>
+    </div>
+    <div class="col-md-6">
+      <label for="pricing" class="form-label" style="color: rgb(111, 100, 100);">Pricing</label>
+      <input type="number" class="form-control" id="pricing" name="pricing" required/>
+    </div>
+
+    <div class="col-md-6">
+      <label for="mrp" class="form-label" style="color: rgb(111, 100, 100);">MRP</label>
+      <input type="text" class="form-control" id="mrp" name="mrp" required/>
+    </div>
+
+    <div class="col-md-6">
+        <label for="customer_id" class="form-label" style="color: rgb(111, 100, 100);">Customer ID:</label>
+        <input type="text" class="form-control" id="customer_id" name="customer_id" required/>
+      </div>
+
+    <div class="col-12" style="display: flex; justify-content: center; align-items: center;">
+      <button type="submit" class="btn btn-primary">Make Order</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

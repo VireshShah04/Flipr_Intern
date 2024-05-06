@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% load static %}
+{% block body %}
+<table class="table table-borderless" style="color: black; margin-top: 30px; margin-left: 35px;">
+    <thead>
+      <tr>
+        <th scope="col">Customer ID</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">City</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+          <td>{{ customer.customer_id }}</td>
+          <td>{{ customer.customer_name }}</td>
+          <td>{{ customer.customer_email }}</td>
+          <td>{{ customer.customer_mobile_number }}</td>
+          <td>{{ customer.customer_city }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

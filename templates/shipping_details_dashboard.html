@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load static %}
+{% block body %}
+<table class="table table-borderless" style="color: black; margin-top: 30px; margin-left: 35px;">
+    <thead>
+      <tr>
+        <th scope="col">Address</th>
+        <th scope="col">City</th>
+        <th scope="col">Pincode</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for shipping_detail in shipping_details %}
+        <tr>
+          <td>{{ shipping_detail.address }}</td>
+          <td>{{ shipping_detail.city }}</td>
+          <td>{{ shipping_detail.pincode }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
